@@ -14,15 +14,29 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Rota POST para receber dados
-app.post('/enviar', (req, res) => {
-    const { nome, email } = req.body;
+//app.post('/enviar', (req, res) => {
+    //const { nome, email } = req.body;
 
     // Salvar em arquivo
-    const dados = `Nome: ${nome}, Email: ${email}\n`;
-    fs.appendFileSync('dados.txt', dados);
+    //const dados = `Nome: ${nome}, Email: ${email}\n`;
+    //fs.appendFileSync('dados.txt', dados);
 
-    res.send({ message: 'Dados recebidos com sucesso!', nome, email });
+    //res.send({ message: 'Dados recebidos com sucesso!', nome, email });
+//});
+app.post('/enviar', (req, res) => {
+  const { nome, email } = req.body;
+
+  // Isso aparece no dashboard → Logs
+  console.log('Novo POST recebido:', { nome, email });
+
+  res.json({
+    message: 'Dados recebidos com sucesso!',
+    nome,
+    email
+  });
 });
+
+
 
 app.listen(PORT, () => {
     console.log(`Servidor rodando em http://localhost:${PORT}`);
