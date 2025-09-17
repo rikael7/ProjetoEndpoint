@@ -35,7 +35,7 @@ app.post('/enviar', (req, res) => {
     //email
   //});
      res.send(`
-    <h2>Iai borracha mano, caiu no phishing pae</h2>
+    <h2>Test by Rikael</h2>
   `);
 
 });
