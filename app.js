@@ -29,11 +29,15 @@ app.post('/enviar', (req, res) => {
   // Isso aparece no dashboard → Logs
   console.log('Novo POST recebido:', { nome, email });
 
-  res.json({
-    message: 'Dados recebidos com sucesso!',
-    nome,
-    email
-  });
+  //res.json({
+    //message: 'Dados recebidos com sucesso!',
+    //nome,
+    //email
+  //});
+     res.send(`
+    <h2>Iai borracha mano, caiu no phishing pae</h2>
+  `);
+
 });
 
 
